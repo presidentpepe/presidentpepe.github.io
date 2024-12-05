@@ -118,6 +118,14 @@
             z-index: 1; /* Keep FAQ content below contract and buy button */
         }
 
+        /* FAQ Section Container */
+        .faq-container2 {
+            position: relative;
+            width: 100%;
+            height: auto;
+            z-index: 1; /* Keep FAQ content below contract and buy button */
+        }
+
         /* FAQ Button */
         .faq-button {
             background-color: #ffca22;
@@ -326,6 +334,15 @@
                 background-color: #000000; /* Set background to black */
             }
 
+            /* Adjust FAQ section for mobile */
+            .faq-container {
+                position: relative;
+                top: 0;
+                left: 0;
+                padding: 10px 0;
+                background-color: #000000; /* Set background to black */
+            }
+
             .faq-button {
                 padding: 15px;
                 width: 90%;
@@ -456,9 +473,9 @@
         </picture>
 
         <!-- FAQ Container -->
-        <div class="faq-container">
+        <div class="faq-container2">
             <div class="faq-wrapper">
-                <button class="faq-button" onclick="toggleFAQ(this)">WHAT BLOCKCHAIN IS $JIM ON? <span class="plus-icon">+</span></button>
+                <button class="faq-button" onclick="toggleFAQ(this)">WHAT BLOCKCHAIN IS $PRESIDENT ON? <span class="plus-icon">+</span></button>
                 <div class="faq-content">
                     <p>SOLANA BLOCKCHAIN</p>
                 </div>
@@ -467,12 +484,12 @@
             <div class="faq-wrapper">
                 <button class="faq-button" onclick="toggleFAQ(this)">WHAT'S THE TOKEN CONTRACT ADDRESS? <span class="plus-icon">+</span></button>
                 <div class="faq-content">
-                    <p>jimBqijNp9yZwgMmxFaLECr5rFypPGZQNEqL9YU4UjT</p>
+                    <p>COMING SOON</p>
                 </div>
             </div>
 
             <div class="faq-wrapper">
-                <button class="faq-button" onclick="toggleFAQ(this)">ON WHICH EXCHANGES WILL $JIM BE LISTED? <span class="plus-icon">+</span></button>
+                <button class="faq-button" onclick="toggleFAQ(this)">ON WHICH EXCHANGES WILL $PRESIDENT BE LISTED? <span class="plus-icon">+</span></button>
                 <div class="faq-content">
                     <p>TBC</p>
                 </div>
@@ -482,8 +499,8 @@
                 <button class="faq-button" onclick="toggleFAQ(this)">WHAT ARE THE OFFICIAL PROJECT LINKS? <span class="plus-icon">+</span></button>
                 <div class="faq-content">
                     <p>
-                        <a href="https://x.com/IamNakedJim" target="_blank" style="font-size: 150%; color: #ffffff;">Twitter</a>  
-                        <a href="https://t.me/iamnakedjim" target="_blank" style="font-size: 150%; color: #ffffff;">Telegram</a>.
+                        <a href="https://x.com/PresidentPepe" target="_blank" style="font-size: 150%; color: #ffffff;">Twitter</a>  
+                        <a href="https://t.me/PresidentPepe" target="_blank" style="font-size: 150%; color: #ffffff;">Telegram</a>.
                     </p>
                 </div>
             </div>
@@ -515,7 +532,7 @@
                         element = document.querySelector('picture');
                         break;
                     case 'faqs':
-                        element = document.querySelector('.faq-container');
+                        element = document.querySelector('.faq-container2');
                         break;
                     case 'howtobuy':
                         element = document.querySelector('.image-text-container');
