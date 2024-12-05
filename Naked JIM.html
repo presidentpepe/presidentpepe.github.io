@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<!-- saved from url=(0014)about:internet -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Naked JIM</title>
+    <style>
+    body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        overflow-x: hidden; /* Prevent horizontal scrolling */
+    }
+
+    /* Main wrapper to lock width, but allow scrolling */
+    .container {
+        max-width: 2325px; /* Set maximum width */
+        width: 100%; /* Allow container to fit the screen width */
+        margin: 0 auto; /* Center the content on the page horizontally */
+    }
+
+        /* Logo Header */
+        .header {
+            background-color: #000000;
+            padding: 10px 20px;
+            text-align: left;
+            font-size: 20px;
+            font-weight: bold;
+            color: #ffca22;
+            display: flex;
+            align-items: center;
+        }
+
+        .header img {
+            height: 40px;
+            margin-left: 60px;
+        }
+
+        /* Navigation bar */
+        .navbar {
+            background-color: #ffca22;
+            text-align: center;
+            padding: 20px 0;
+            font-family: 'Arial Black', sans-serif;
+            font-weight: bold;
+        }
+
+        .navbar a {
+            font-size: 16px;
+            color: #000000;
+            text-decoration: none;
+            padding: 0 10px;
+        }
+
+        .navbar a:hover {
+            background-color: #000000;
+            color: #ffca22;
+            padding: 0px 10px;
+        }
+
+        .navbar a:last-child {
+            margin-right: 20px;
+        }
+
+        /* Style for images under navbar */
+        .main-image {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* Video Section */
+        .video-section {
+            background-color: #ffca22;
+            padding: 40px 0;
+            text-align: center;
+            position: relative;
+        }
+
+        .video-section h2 {
+            color: #ffca22;
+            font-family: 'Arial Black', sans-serif;
+            font-size: 32px;
+            position: relative;
+            z-index: 2;
+            background-color: #000000;
+            display: inline-block;
+            padding: 10px 20px;
+            margin: 0;
+        }
+
+        /* Black stripe under the title */
+        .black-stripe {
+            background-color: #000000;
+            height: 80px;
+            width: 100%;
+            margin-top: -70px; /* Adjusts it directly under the text */
+        }
+
+        .video-container {
+            position: relative;
+            width: 100%;
+            max-width: 800px;
+            margin: 0 auto;
+            margin-top: 40px;
+        }
+
+        .video-container video {
+            width: 100%;
+            height: 450px;
+            border: none;
+        }
+
+        /* FAQ Section Container */
+        .faq-container {
+            position: relative;
+            width: 100%;
+            height: auto;
+            z-index: 1; /* Keep FAQ content below contract and buy button */
+        }
+
+        /* FAQ Button */
+        .faq-button {
+            background-color: #ffca22;
+            color: #000;
+            cursor: pointer;
+            padding: 55px;
+            width: 39%;
+            height: 75px;
+            text-align: left;
+            border: 2px solid #000; /* Add black outline */
+            font-size: 18px;
+            font-weight: bold;
+            margin: 0px auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: relative;
+            top: -610px;
+            left: 160px;
+            z-index: 1;
+        }
+
+        .faq-button:hover {
+            background-color: #ffca22;
+        }
+
+        /* FAQ Content */
+        .faq-content {
+            max-height: 0;
+            overflow: hidden;
+            background-color: #000000; /* Black background */
+            color: #ffca22; /* Yellow text */
+            transition: max-height 0.3s ease;
+            width: 39%;
+            margin: 0px auto; /* Align the content width with the button */
+            padding: 0 15px;
+            font-size: 16px;
+            border: 2px solid #000; /* Black border to match button */
+            border-top: none; /* Remove the top border so it connects with the button */
+            position: relative;
+            top: -610px;
+            left: 160px;
+        }
+
+        /* Plus Icon */
+        .plus-icon {
+            font-size: 24px;
+        }
+
+        /* New Image */
+        .last-image {
+            display: block;
+            margin: 0px auto;
+            padding-top: 0;
+            position: relative;
+            top: -350px;
+            width: 100%;
+            z-index: 5;
+        }
+
+        /* Text over image */
+        .text-over-image {
+            position: absolute;
+            top: 10.1%;
+            left: 40%;
+            transform: translate(-50%, -50%);
+            color: #ffffff;
+            font-size: 22px;
+            font-family: 'Arial Black', sans-serif;
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 10px 20px;
+            border-radius: 8px;
+            z-index: 10;
+        }
+
+/* Buy Button */
+.buy-button {
+    position: absolute;
+    top: 22%;
+    left: 36%;
+    transform: translate(-50%, -50%);
+    width: 20vw; /* Adjust size relative to the viewport width */
+    height: auto;
+    max-width: 550px; /* Optional: set a maximum width */
+    cursor: pointer;
+    z-index: 10;
+}
+
+        /* Social Media Buttons */
+.social-buttons {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 1000;
+}
+
+.social-buttons a {
+    margin: 5px 0;
+}
+
+.social-buttons img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    transition: transform 0.3s;
+}
+
+.social-buttons img:hover {
+    transform: scale(1.1);
+}
+
+        /* Media query for mobile devices */
+        @media only screen and (max-width: 768px) {
+            html, body {
+                width: 100%;
+                overflow-x: hidden; /* Ensure no horizontal scrolling on mobile */
+            }
+
+            .container {
+                width: 100%; /* Allow the container to fit the mobile screen */
+                max-width: none; /* Remove max width for mobile */
+            }
+
+            /* Adjust logo header for mobile */
+            .header {
+                padding: 5px 10px;
+                text-align: center;
+            }
+
+            .header img {
+                height: 30px;
+                margin-left: 0;
+            }
+
+            /* Adjust navigation bar for mobile */
+            .navbar {
+                padding: 10px 0;
+                font-size: 14px;
+            }
+
+            .navbar a {
+                font-size: 14px;
+                padding: 0 5px;
+            }
+
+            /* Style for images under navbar on mobile */
+            .main-image, .last-image {
+                width: 150%; /* Increase width to 150% */
+                height: auto;
+                display: block;
+                position: relative;
+                left: -25%; /* Shift left by -25% to center the image */
+            }
+
+            /* Adjust video section for mobile */
+            .video-section {
+                padding: 20px 0;
+            }
+
+            .video-section h2 {
+                font-size: 24px;
+                padding: 5px 10px;
+            }
+
+            .video-container video {
+                height: 250px;
+            }
+
+            .social-buttons {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .social-buttons a {
+        margin: 5px 0;
+    }
+
+/* Parent container */
+.image-text-container {
+    position: relative;
+}
+
+
+
+/* Buy Button */
+.buy-button {
+    position: absolute;
+    top: 22%; /* Adjust as needed */
+    left: 30%; /* Adjust as needed */
+    transform: translate(-50%, -50%);
+    width: 40%;
+    height: auto;
+}
+            /* Adjust FAQ section for mobile */
+            .faq-container {
+                position: relative;
+                top: 0;
+                left: 0;
+                padding: 20px 0;
+                background-color: #000000; /* Set background to black */
+            }
+
+            .faq-button {
+                padding: 15px;
+                width: 90%;
+                height: auto;
+                font-size: 16px;
+                margin: 10px auto;
+                position: relative;
+                top: 0;
+                left: 0;
+                border: 2px solid #ffca22; /* Change border color to match the theme */
+                background-color: #000000; /* Set button background to black */
+                color: #ffca22; /* Set text color to yellow */
+            }
+
+            .faq-button:hover {
+                background-color: #111111; /* Slightly lighter black on hover */
+            }
+
+            .faq-content {
+                width: 90%;
+                padding: 0 10px;
+                font-size: 14px;
+                position: relative;
+                top: 0;
+                left: 0;
+                border: none; /* Remove border when collapsed */
+            }
+
+            .plus-icon {
+                font-size: 20px;
+                color: #ffca22;
+            }
+
+            /* Adjust borders when expanded */
+            .faq-wrapper.expanded .faq-button {
+                border-bottom: none; /* Remove bottom border to connect with content */
+            }
+
+            .faq-wrapper.expanded .faq-content {
+                border: 2px solid #ffca22;
+                border-top: none; /* Remove top border to connect with button */
+                padding: 10px;
+                background-color: #000000; /* Ensure background is black */
+            }
+
+            /* Adjust positioning of last image */
+            .last-image {
+                position: relative;
+                top: 0; /* Adjust this value as needed */
+            }
+        }
+
+        /* Adjust borders when expanded (Desktop) */
+        .faq-wrapper.expanded .faq-button {
+            border-bottom: none; /* Remove bottom border to connect with content */
+        }
+
+        .faq-wrapper.expanded .faq-content {
+            border: 2px solid #000;
+            border-top: none; /* Remove top border to connect with button */
+            padding: 10px;
+        }
+
+        /* Ensure collapsed content has no border */
+        .faq-content {
+            border: none;
+            padding: 0 15px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Header section -->
+        <div class="header">
+            <img src="./Naked JIM_files/NakedJimLogo.png" alt="Naked JIM Logo">
+        </div>
+
+        <!-- Navigation bar -->
+        <div class="navbar">
+            <a href="https://www.nakedjim.io/#" class="nav-link" data-target="meetjim">MEET JIM?</a>
+            <a href="https://www.nakedjim.io/#" class="nav-link" data-target="memes">MEMES</a>
+            <a href="https://www.nakedjim.io/#" class="nav-link" data-target="friends">FRIENDS</a>
+            <a href="https://www.nakedjim.io/#" class="nav-link" data-target="faqs">FAQs</a>
+            <a href="https://www.nakedjim.io/#" class="nav-link" data-target="howtobuy">HOW TO BUY</a>
+            <a href="https://www.nakedjim.io/#" class="nav-link" data-target="tokenomics">TOKENOMICS</a>
+        </div>
+
+        <!-- Main images under the navbar -->
+        <img src="./Naked JIM_files/Img1.png" alt="Main Image 1" class="main-image">
+
+<!-- Social Media Buttons -->
+<div class="social-buttons">
+    <a href="https://x.com/IamNakedJim" target="_blank">
+        <img src="./Naked JIM_files/xlogo.png" alt="Twitter">
+    </a>
+    <a href="https://t.me/iamnakedjim" target="_blank">
+        <img src="./Naked JIM_files/telegram.jpeg" alt="Telegram">
+    </a>
+    <a href="https://www.dextools.io/app/en/solana/pair-explorer/4ZoLR8sm4oPTqUcGj8vvhHfu2eVNTW3Q79WLpRzjvBru?t=1729601810771" target="_blank">
+        <img src="./Naked JIM_files/dexlogo.png" alt="Dextools">
+    </a>
+    <a href="https://dexscreener.com/solana/4zolr8sm4optqucgj8vvhhfu2evntw3q79wlprzjvbru" target="_blank">
+        <img src="./Naked JIM_files/dexscreenerlogo.png" alt="Dexscreener">
+    </a>
+</div>
+
+
+        <img src="./Naked JIM_files/Img2.png" alt="Main Image 2" class="main-image">
+
+        <!-- Video section -->
+        <div class="video-section">
+            <h2>VIDEOS THAT BANG</h2>
+            <div class="black-stripe"></div>
+            <div class="video-container">
+                <video autoplay="" muted="" playsinline="" controls="">
+                    <source src="/assets/NJ_Intro Video 16x9.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+        </div>
+
+        <!-- Main image 3 under the video -->
+        <!-- Use picture element to switch images on mobile -->
+        <picture>
+            <source srcset="/assets/Img3Mob.png" media="(max-width: 768px)">
+            <img src="./Naked JIM_files/Img3.png" alt="Main Image 3" class="main-image">
+        </picture>
+
+        <!-- FAQ Container -->
+        <div class="faq-container">
+            <div class="faq-wrapper">
+                <button class="faq-button" onclick="toggleFAQ(this)">WHAT BLOCKCHAIN IS $JIM ON? <span class="plus-icon">+</span></button>
+                <div class="faq-content">
+                    <p>SOLANA BLOCKCHAIN</p>
+                </div>
+            </div>
+
+            <div class="faq-wrapper">
+                <button class="faq-button" onclick="toggleFAQ(this)">WHAT'S THE TOKEN CONTRACT ADDRESS? <span class="plus-icon">+</span></button>
+                <div class="faq-content">
+                    <p>jimBqijNp9yZwgMmxFaLECr5rFypPGZQNEqL9YU4UjT</p>
+                </div>
+            </div>
+
+            <div class="faq-wrapper">
+                <button class="faq-button" onclick="toggleFAQ(this)">ON WHICH EXCHANGES WILL $JIM BE LISTED? <span class="plus-icon">+</span></button>
+                <div class="faq-content">
+                    <p>TBC</p>
+                </div>
+            </div>
+
+            <div class="faq-wrapper">
+                <button class="faq-button" onclick="toggleFAQ(this)">WHAT ARE THE OFFICIAL PROJECT LINKS? <span class="plus-icon">+</span></button>
+                <div class="faq-content">
+                    <p>
+                        <a href="https://x.com/IamNakedJim" target="_blank" style="font-size: 150%; color: #ffffff;">Twitter</a>  
+                        <a href="https://t.me/iamnakedjim" target="_blank" style="font-size: 150%; color: #ffffff;">Telegram</a>.
+                    </p>
+                </div>
+            </div>
+
+<!-- Main image 4 with text over it and buy button below -->
+<div class="image-text-container">
+    <img src="./Naked JIM_files/img4.png" alt="Main Image 4" class="last-image">
+    <a href="https://raydium.io/swap/?inputMint=sol&amp;outputMint=jimBqijNp9yZwgMmxFaLECr5rFypPGZQNEqL9YU4UjT" target="_blank">
+        <img src="./Naked JIM_files/buybutton.png" alt="Buy Button" class="buy-button">
+    </a>
+</div>
+
+
+    <script>
+        // Smooth scrolling function without changing element positions
+        document.querySelectorAll('.nav-link').forEach(function(link) {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                var target = this.getAttribute('data-target');
+                var element = null;
+                switch(target) {
+                    case 'meetjim':
+                        element = document.querySelector('.main-image:nth-of-type(1)');
+                        break;
+                    case 'memes':
+                        element = document.querySelector('.main-image:nth-of-type(2)');
+                        break;
+                    case 'friends':
+                        element = document.querySelector('picture');
+                        break;
+                    case 'faqs':
+                        element = document.querySelector('.faq-container');
+                        break;
+                    case 'howtobuy':
+                        element = document.querySelector('.image-text-container');
+                        break;
+                    case 'tokenomics':
+                        element = document.querySelector('.tokenomics-placeholder');
+                        break;
+                    default:
+                        break;
+                }
+                if(element) {
+                    // Get the element's position relative to the top of the document
+                    var elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
+                    // Scroll to the element without changing positions of other elements
+                    window.scrollTo({
+                        top: elementPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        function toggleFAQ(button) {
+            const content = button.nextElementSibling;
+            const icon = button.querySelector('.plus-icon');
+            const wrapper = button.parentElement;
+
+            if (content.style.maxHeight) {
+                content.style.maxHeight = null; // Collapse the content
+                wrapper.classList.remove('expanded');
+                icon.textContent = "+";
+            } else {
+                content.style.maxHeight = content.scrollHeight + "px"; // Expand the content
+                wrapper.classList.add('expanded');
+                icon.textContent = "-";
+            }
+        }
+    </script>
+
+
+
+</div></div></body></html>
